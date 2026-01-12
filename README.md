@@ -159,6 +159,16 @@ We recommend following the [official BFCL guidelines](https://github.com/Shishir
 ### ACEBench
 In the ACEBench evaluation, we instruct the model to produce tool calls of the `<tool_call> </tool_call>` type in order to align with the training format of the model.
 
+## 📖 Tool Execution Mechanism
+
+**Important Note**: During the data generation phase, LoopTool uses LLM simulation rather than real sandbox execution for tool calls. This design enables:
+- Rapid generation of diverse training data
+- Support for 12,000+ tools without API dependencies
+- Controllable simulation of success/failure scenarios
+
+For a detailed analysis of the tool execution mechanism, please refer to [TOOL_EXECUTION_ANALYSIS.md](TOOL_EXECUTION_ANALYSIS.md).
+
+The models trained with LoopTool can be integrated with real tool execution environments during deployment.
 
 ## 🙏 Acknowledgement
 We sincerely appreciate the contributions of the open-source community:
